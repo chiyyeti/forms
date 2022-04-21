@@ -1,0 +1,119 @@
+
+
+
+<div>
+<!-- <nav class="navbar navbar-lighgt bg-primary">
+  <div class="container-fluid">
+      <h1 style="color: aliceblue;">Employee Data</h1>
+      <div class="d-flex">
+          <button  type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Add Employee</button>
+      </div>
+  </div>
+</nav>
+
+<table class="table" border="2px">
+  <thead>
+      <tr>
+          <th>Name</th>
+          <th>Email Id</th>
+          <th>Location</th>
+          <th>Action</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Gana</td>
+          <td>gana@gmail.com</td>
+          <td>Anantapur</td>
+          <td>
+              <button (click)="onEdit(data)" type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Edit</button>
+              <button class="btn btn-danger mx-3" >Delete</button>
+          </td> 
+      </tr>
+  </tbody>
+</table> -->
+
+
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Employee Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <div> -->
+        <!--Form-->
+        <!-- <form [formGroup]="empForm" (ngSubmit)="onSubmit()" >
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">  
+            <span style="color: red;">Enter valid Email Address !</span>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1">
+          </div>
+          
+          <button type="submit"  class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">ADD</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+</div>
+
+
+
+
+<div class="container ">
+  <div class="d-flex justify-content-center mt-5 ">
+    <div class="card  col-md-6">
+
+      <form [formGroup]="regForm" (ngSubmit)="register()">
+        <div class="form-group">
+          <label for="user">User Name :</label>
+          <input type="text" class=" form-control " name="user" id="user" placeholder="Enter User Name..."   formControlName="user" >
+          <span style="color: red;" *ngIf="user.touched && user.invalid  " >Enter User Name</span>
+        </div>
+
+
+      <div class="form-group">
+        <label for="email">Email :</label>
+        <input type="email" class="form-control" name="eamil" id="email" formControlName="email" aria-describedby="emailHelpId" placeholder="Enter email  id....">
+       <span  style="color: red;" *ngIf="email.touched && email.invalid  " >Enter Email Id</span>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password :</label>
+        <input type="password" class="form-control" name="password" id="password" formControlName="password" placeholder="Enter password">
+        <span  style="color: red;" *ngIf="password.touched && password.invalid  "  >*Password must contain 8 characters, one Uppercase & one Lowercase & one Special Character</span>
+      </div>
+
+      <div class="form-group">
+        <label for="cpassword">Confirm Password :</label>
+        <input type="password" class="form-control" name="cpassword" id="cpassword" formControlName="cpassword" placeholder="Enter Confirm password">
+        <span  style="color: red;" *ngIf="cpassword.touched && cpassword.invalid  " >Password should be match !!</span>
+      </div>
+      <div class="d-flex justify-content-end mb-3">
+      <button type="submit" [disabled]="regForm.invalid" class="btn btn-success">Register</button>&nbsp;
+      <button type="reset" class="btn btn-primary">Reset</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
