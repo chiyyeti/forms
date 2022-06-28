@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="col-md-6">
+        <div class="card d-flex justify-content-center mt-5 mx-3 p-3">
+            <form #userForm="ngForm"  (submit)="customer(userForm.value)" >
+                <div class="form-group">
+                    <label for="user">User Name :</label>
+                    <input type="text" name="user" #user="ngModel" required ngModel class="form-control"  required
+                     placeholder="Enter User Name"/>
+                        <span *ngIf="user.touched && user.invalid" >Enter User name</span>
+                </div>
+
+
+
+
+
+                <div class="d-flex justify-content-center">
+                    <button type="submit" [disabled]="userForm.invalid" class="btn btn-primary">Login</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div>{{user}}</div>

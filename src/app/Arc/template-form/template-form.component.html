@@ -1,0 +1,100 @@
+<div class="container d-flex justify-content-center">
+
+    <div class="d-flex justify-content">
+        <div class="card mt-3 p-4">
+            <div style="text-align: center; " class="mb-4">
+                <h3>Login Here !!</h3>
+            </div>
+
+            <form #loginForm="ngForm" (submit)="login(loginForm)" >
+    <!--User name-->
+                <div class="form-group">
+                    <label for="user">User Name</label>
+                    <input type="text"  name="user" required [(ngModel)]="user" minlength="4" maxlength="25"  class="form-control">
+                    
+                </div>
+    <!--Email-->
+                <div class="form-group">
+                    <label for="eamil">Email Id </label>
+                    <input type="email" name="email" pattern="email" required [(ngModel)]="email" class="form-control">
+                    <span></span>
+                </div>
+<!--Password-->           
+                <div class="row">
+
+                    <div class="col">
+                        <label for="password">Password</label>
+                        <input type="password" required name="password" [(ngModel)]="password" class="form-control">
+                    </div>
+ <!--Confirm Password-->                 
+                    <div class="col">
+                        <label for="cpassword">Confirm Password</label>
+                        <input type="password" required name="cpassword" [(ngModel)]="cpassword" class="form-control">
+                    </div>
+                </div>
+<!--Contact-->
+                <div class="form-group">
+                    <label for="contact">Contact</label>
+                    <input type="number" name="contact" required [(ngModel)]="contact" class="form-control">
+                </div>
+
+  <!--Address-->   <div class="form-group">
+                   <label for="address">Address</label>
+                    <textarea name="address"  [(ngModel)]="address"  cols="10" class="form-control" rows=""></textarea>
+                </div>
+
+  <!--City-->   <div class="form-group">
+                   <label for="city">City</label>
+                    <select name="city"  [(ngModel)]="city"   class="form-control" >
+                        <option value="">--  select city --</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Chennai">Chennai</option>
+                    </select>
+                </div>
+<!--Gender-->
+                <div class="form-group">
+                    <input type="radio" name="gender" [(ngModel)]="gender" value="male" > Male &nbsp;
+                    <input type="radio" name="gender"  [(ngModel)]="gender" value="female" > Female  &nbsp;
+                    <input type="radio" name="gender"  [(ngModel)]="gender" value="others"  > Others
+                   
+                </div>
+<!--Terms-->
+                <div class="form-group" >
+                    <input type="checkbox" required  name="terms" [(ngModel)]="terms" >
+                    <label for="terms">  Agree Terms and Conditions</label>
+                </div>
+<!--Date-->
+                <div class="form-group" >
+                    <input type="datetime-local"  required name="date" [(ngModel)]="date" >
+                </div>
+<!--Color-->
+                <!-- <div class="form-group" >
+                    <input type="color"  name="file" >
+                </div> -->
+<!--File-->
+                <div class="form-group" >
+                    <input type="file"  name="file" [(ngModel)]="file" >
+                </div>
+<!--Download-->
+                <div class="form-group" >
+                    <a href="#" download="#">Download </a>
+                </div>
+<!--Login-->
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary">Login</button>&nbsp;
+                    <button type="button" (click)="setValue(loginForm)" class="btn btn-success">Set Values</button>&nbsp;
+                    <button type="reset" class="btn btn-info">Reset</button>
+                </div>
+
+                
+            </form>
+<!--forgot-->
+
+
+
+
+        </div>
+    </div>
+
+</div>

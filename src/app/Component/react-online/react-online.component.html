@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h3>Reactive Form With Validation</h3>
+            <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="text-center border border-light p-5">
+                <div class="form-group">
+
+                    <input type="text" formControlName="txtName" placeholder="Name" class="form-control" [ngClass]="{ 'is-invalid': submitted && getform.txtName.errors }" />
+                    <div *ngIf="submitted && (getform.txtName.errors || getform.txtName.touched)" class="text-danger">
+                        <div *ngIf="getform.txtName.errors?.required">
+                            First Name is required
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <input type="text" formControlName="txtMobile" class="form-control" placeholder="Mobile No" [ngClass]="{ 'is-invalid': submitted && getform.txtMobile.errors }" />
+                    <div *ngIf="submitted && (getform.txtMobile.errors || getform.txtMobile.touched)" class="text-danger">
+                        <div *ngIf="getform.txtMobile.errors?.required">Mobile number is required</div>
+                        <div *ngIf="getform.txtMobile.errors?.minlength">please enter 10 digit</div>
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <input type="text" formControlName="txtEmail" placeholder="Email" class="form-control" [ngClass]="{ 'is-invalid': submitted && getform.txtEmail.errors }" />
+                    <div *ngIf="submitted && (getform.txtEmail.errors || getform.txtEmail.touched)" class="text-danger">
+                        <div *ngIf="getform.txtEmail.errors?.required">Email is required</div>
+                        <div *ngIf="getform.txtEmail.errors?.email">Email must be a valid email address</div>
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <input type="password" formControlName="txtPassword" placeholder="Password" class="form-control" [ngClass]="{ 'is-invalid': submitted && getform.txtPassword.errors }" />
+                    <div *ngIf="submitted && (getform.txtPassword.errors || getform.txtPassword.touched)" class="text-danger">
+                        <div *ngIf="getform.txtPassword.errors?.required">Password is required</div>
+                        <div *ngIf="getform.txtPassword.errors?.minlength">Password must be at least 6 characters</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" type="submit">Register</button>&nbsp;
+                    <button class="btn btn-primary" type="reset" (click)="onReset()">Cancel</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

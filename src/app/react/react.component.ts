@@ -21,13 +21,48 @@ export class ReactComponent implements OnInit {
 
 ngOnInit(): void {
 
-  
-//   this.empForm =this.fb.group({
-//      email: new FormControl('',[Validators.required,Validators.email,Validators.pattern(" /^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\. [a-zA-Z2-3-]+)*$/")]),
-//      password: new FormControl('',[Validators.required,Validators.pattern(" '(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}'")])
-//   // At least 8 characters in length,Lowercase letters,Uppercase letters,Numbers Special characters
-//    })
-// }
+  /*
+  this.empForm =this.fb.group({
+     email: new FormControl('',[Validators.required,Validators.email,Validators.pattern(" /^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\. [a-zA-Z2-3-]+)*$/")]),
+     password: new FormControl('',[Validators.required,Validators.pattern(" '(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}'")])
+  // At least 8 characters in length,Lowercase letters,Uppercase letters,Numbers Special characters
+   })
+}  */
+
+
+
+  /*
+By using setValue method we can set the form field values .
+disadvantage in setValue we have set values to all form fields.
+
+
+this.regForm.setValue({
+  user: "sunny",
+  email : "sunny@gmail.com",
+  password : "Abc@12345",
+  cpassword :"Abc@12345"
+
+}) */
+
+
+/*
+
+By using patchValue we can set any  the form field value.no need to fill all the form fields
+
+this.regForm.patchValue({
+  user :"Sunny",
+  email : "Sunny@gmail.com"
+
+})
+*/
+
+
+
+
+
+
+
+
 }
 
 cpasswordMatch(controlName:string , matchingControlName:string){

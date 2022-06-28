@@ -6,8 +6,8 @@
                 
                 <div class="form-group">
                     <label for="">User Name :</label>
-                    <input type="text" name="user" class="form-control"  pattern="[a-zA-Z]+$"  #name="ngModel" id="user" required  ngModel >
-                    <span style="color: red;" *ngIf="name.invalid  &&  name.touched"  >Enter User Name</span>
+                    <input type="text" name="user" class="form-control"  pattern="[a-zA-Z]+$"  #user="ngModel" id="user" required  ngModel >
+                    <span style="color: red;" *ngIf="user.invalid  &&  user.touched"  >Enter User Name</span>
                 </div>
 
 
@@ -35,3 +35,5 @@
         </div>
     </div>
 </div>
+
+
